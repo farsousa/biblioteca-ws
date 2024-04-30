@@ -4,5 +4,5 @@ CREATE TABLE tb_livro (
 	tli_descricao VARCHAR(150) NOT NULL,
 	tli_autor VARCHAR(150) NOT NULL,
 	tli_quantidade INT NOT NULL,
-	CONSTRAINT PK_TB_LIVRO PRIMARY KEY(tli_id)
+	CONSTRAINT pk_tb_livro PRIMARY KEY(tli_id)
 );
