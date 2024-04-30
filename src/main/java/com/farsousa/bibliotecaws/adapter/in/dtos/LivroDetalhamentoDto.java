@@ -10,8 +10,10 @@ import lombok.Data;
 public class LivroDetalhamentoDto {
 	
 	private Long id;
+	private String titulo;
 	private String descricao;
 	private String autor;
+	private Integer quantidade;
 
 	public static LivroDetalhamentoDto fromModel(Livro model) {
 		if(model == null) {
@@ -22,6 +24,8 @@ public class LivroDetalhamentoDto {
 				.autor(model.getAutor())
 				.descricao(model.getDescricao())
 				.id(model.getId())
+				.titulo(model.getTitulo())
+				.quantidade(model.getQuantidade())
 				.build();
 	}
 

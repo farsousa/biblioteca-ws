@@ -27,12 +27,18 @@ public class LivroEntity {
 	private String descricao;
 	@Column(name = "tli_autor")
 	private String autor;
+	@Column(name = "tli_titulo")
+	private String titulo;
+	@Column(name = "tli_quantidade")
+	private Integer quantidade;
 	
 	public static LivroEntity fromModel(Livro model) {
 		return new LivroEntityBuilder()
 				.autor(model.getAutor())
 				.descricao(model.getDescricao())
 				.id(model.getId())
+				.titulo(model.getTitulo())
+				.quantidade(model.getQuantidade())
 				.build();
 	}
 	
@@ -41,6 +47,8 @@ public class LivroEntity {
 		model.setAutor(this.autor);
 		model.setDescricao(this.descricao);
 		model.setId(this.id);
+		model.setTitulo(this.titulo);
+		model.setQuantidade(this.quantidade);
 		
 		return model;
 	}

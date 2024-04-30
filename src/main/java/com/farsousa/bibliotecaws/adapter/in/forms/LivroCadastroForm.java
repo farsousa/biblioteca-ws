@@ -9,13 +9,17 @@ import lombok.Data;
 @Builder
 public class LivroCadastroForm {
 	
+	private String titulo;
 	private String descricao;
 	private String autor;	
+	private Integer quantidade;
 	
 	public Livro toModel() {
 		Livro model = new Livro();
 		model.setAutor(this.autor);
+		model.setTitulo(this.titulo);
 		model.setDescricao(this.descricao);
+		model.setQuantidade(this.quantidade);
 		
 		return model;
 	}

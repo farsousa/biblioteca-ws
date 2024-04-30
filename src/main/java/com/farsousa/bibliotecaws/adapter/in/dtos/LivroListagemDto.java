@@ -9,7 +9,8 @@ import lombok.Data;
 public class LivroListagemDto {
 	
 	private Long id;
-	private String descricao;
+	private String titulo;
+	private String autor;
 	
 	public static LivroListagemDto fromModel(Livro model) {
 		if(model == null) {
@@ -17,7 +18,8 @@ public class LivroListagemDto {
 		}
 		
 		return LivroListagemDto.builder()
-				.descricao(model.getDescricao())
+				.titulo(model.getTitulo())
+				.autor(model.getAutor())
 				.id(model.getId())
 				.build();
 	}

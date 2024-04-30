@@ -1,0 +1,5 @@
+CREATE TABLE tb_usuario (
+	tus_id INT AUTO_INCREMENT,
+	tus_nome VARCHAR(50) NOT NULL,
+	CONSTRAINT PK_TB_USUARIO PRIMARY KEY(tus_id)
+);
