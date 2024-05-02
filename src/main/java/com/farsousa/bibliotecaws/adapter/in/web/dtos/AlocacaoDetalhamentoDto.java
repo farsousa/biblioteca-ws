@@ -1,10 +1,9 @@
-package com.farsousa.bibliotecaws.adapter.in.dtos;
+package com.farsousa.bibliotecaws.adapter.in.web.dtos;
 
 import java.time.LocalDateTime;
 
+import com.farsousa.bibliotecaws.core.enums.SituacaoAlocacao;
 import com.farsousa.bibliotecaws.core.models.Alocacao;
-import com.farsousa.bibliotecaws.core.models.Livro;
-import com.farsousa.bibliotecaws.core.models.Usuario;
 
 import lombok.Builder;
 import lombok.Data;
@@ -14,10 +13,12 @@ import lombok.Data;
 public class AlocacaoDetalhamentoDto {
 	
 	private Long id;
-	private Livro livro;
-	private Usuario usuario;
+	private LivroDetalhamentoDto livro;
+	private UsuarioDetalhamentoDto usuario;
 	private LocalDateTime dataAlocacao;
 	private LocalDateTime dataPrevistaDevolucao;
+	private LocalDateTime dataDevolucao;
+	private SituacaoAlocacao situacao;
 
 	public static AlocacaoDetalhamentoDto fromModel(Alocacao model) {
 		if(model == null) {
@@ -25,11 +26,13 @@ public class AlocacaoDetalhamentoDto {
 		}
 		
 		return AlocacaoDetalhamentoDto.builder()
-				.livro(model.getLivro())
-				.usuario(model.getUsuario())
+				.livro(LivroDetalhamentoDto.fromModel(model.getLivro()))
+				.usuario(UsuarioDetalhamentoDto.fromModel(model.getUsuario()))
 				.id(model.getId())
 				.dataAlocacao(model.getDataAlocacao())
 				.dataPrevistaDevolucao(model.getDataPrevistaDevolucao())
+				.dataDevolucao(model.getDataDevolucao())
+				.situacao(model.getSituacao())
 				.build();
 	}
 

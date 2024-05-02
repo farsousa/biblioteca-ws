@@ -1,4 +1,4 @@
-package com.farsousa.bibliotecaws.adapter.in;
+package com.farsousa.bibliotecaws.adapter.in.web;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.farsousa.bibliotecaws.adapter.in.dtos.RespostaDto;
-import com.farsousa.bibliotecaws.adapter.in.dtos.UsuarioDetalhamentoDto;
-import com.farsousa.bibliotecaws.adapter.in.dtos.UsuarioListagemDto;
+import com.farsousa.bibliotecaws.adapter.in.web.dtos.RespostaDto;
+import com.farsousa.bibliotecaws.adapter.in.web.dtos.UsuarioDetalhamentoDto;
+import com.farsousa.bibliotecaws.adapter.in.web.dtos.UsuarioListagemDto;
 import com.farsousa.bibliotecaws.core.models.Usuario;
 import com.farsousa.bibliotecaws.core.ports.in.BuscarUsuarioPortIn;
 

@@ -1,4 +1,4 @@
-package com.farsousa.bibliotecaws.adapter.in.dtos;
+package com.farsousa.bibliotecaws.adapter.in.web.dtos;
 
 import com.farsousa.bibliotecaws.core.models.Usuario;
 

@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import com.farsousa.bibliotecaws.core.enums.SituacaoAlocacao;
+import com.farsousa.bibliotecaws.core.exceptions.ValidacaoException;
 import com.farsousa.bibliotecaws.core.models.Alocacao;
 import com.farsousa.bibliotecaws.core.ports.in.BuscarAlocacaoPortIn;
 import com.farsousa.bibliotecaws.core.ports.in.ProcessarAlocacaoPortIn;
@@ -23,7 +24,7 @@ public class ProcessarAlocacaoUseCase implements ProcessarAlocacaoPortIn {
 	public void verificarPendenciasTodos() {
 		List<Alocacao> alocacoes = buscarAlocacaoPortIn.todos();		
 		alocacoes.stream().forEach(alocacao -> {
-			alocacao = verificarPendencias(alocacao);
+			verificarPendencias(alocacao);
 			atualizarAlocacaoPortOut.execute(alocacao);
 		});			
 	}
@@ -31,13 +32,16 @@ public class ProcessarAlocacaoUseCase implements ProcessarAlocacaoPortIn {
 	@Override
 	public void verificarPendenciasPorId(Long id) {
 		Alocacao alocacao = buscarAlocacaoPortIn.porId(id);
-		alocacao = verificarPendencias(alocacao);	
+		verificarPendencias(alocacao);	
 		atualizarAlocacaoPortOut.execute(alocacao);
 	}
 
 	@Override
 	public void registrarDevolucaoPorId(Long id) {
 		Alocacao alocacao = buscarAlocacaoPortIn.porId(id);
+		if(alocacao.getDataDevolucao() != null) {
+			throw new ValidacaoException("Alocação já devolvida!");
+		}
 		alocacao.setDataDevolucao(LocalDateTime.now());		
 		atualizarAlocacaoPortOut.execute(alocacao);
 		verificarPendenciasPorId(id);
