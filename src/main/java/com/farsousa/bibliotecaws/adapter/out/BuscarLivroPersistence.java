@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import com.farsousa.bibliotecaws.adapter.out.entities.LivroEntity;
 import com.farsousa.bibliotecaws.adapter.out.repositories.LivroRepository;
-import com.farsousa.bibliotecaws.core.exceptions.NaoEncontradoException;
 import com.farsousa.bibliotecaws.core.models.Livro;
 import com.farsousa.bibliotecaws.core.ports.out.BuscarLivroPortOut;
 
@@ -18,23 +17,19 @@ public class BuscarLivroPersistence implements BuscarLivroPortOut {
 	}
 
 	@Override
-	public Livro porId(Long id) {
-		Optional<LivroEntity> livro = livroRepository.findById(id);
-		if(livro.isEmpty()) {
-			throw new NaoEncontradoException("Livro não encontrado!");
+	public Optional<Livro> porId(Long id) {
+		Optional<LivroEntity> livroEntity = livroRepository.findById(id);
+		
+		if(livroEntity.isEmpty()) {
+			return Optional.empty();
 		}
 		
-		return livro.get().toModel();
+		return Optional.of(livroEntity.get().toModel());
 	}
 
 	@Override
-	public List<Livro> todos() {
-		List<LivroEntity> livros = livroRepository.findAll();
-		if(livros.isEmpty()) {
-			throw new NaoEncontradoException("Não há livros cadastrados!");
-		}
-		
-		return livros.stream().map(LivroEntity::toModel).toList();
+	public List<Livro> todos() {		
+		return livroRepository.findAll().stream().map(LivroEntity::toModel).toList();
 	}
 
 

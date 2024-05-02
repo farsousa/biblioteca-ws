@@ -4,6 +4,6 @@ import com.farsousa.bibliotecaws.core.models.Livro;
 
 public interface SalvarLivroPortOut {
 	
-	public Livro execute(Livro livroASalvar);
+	Livro execute(Livro livroASalvar);
 
 }

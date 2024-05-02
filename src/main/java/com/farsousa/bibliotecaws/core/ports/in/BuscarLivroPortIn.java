@@ -6,8 +6,8 @@ import com.farsousa.bibliotecaws.core.models.Livro;
 
 public interface BuscarLivroPortIn {
 	
-	public Livro porId(Long id);
+	Livro porId(Long id);
 	
-	public List<Livro> todos();
+	List<Livro> todos();
 
 }

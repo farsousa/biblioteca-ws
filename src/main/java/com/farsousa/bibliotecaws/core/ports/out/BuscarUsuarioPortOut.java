@@ -6,8 +6,8 @@ import com.farsousa.bibliotecaws.core.models.Usuario;
 
 public interface BuscarUsuarioPortOut {
 	
-	public Usuario porId(Long id);
+	Usuario porId(Long id);
 	
-	public List<Usuario> todos();
+	List<Usuario> todos();
 
 }

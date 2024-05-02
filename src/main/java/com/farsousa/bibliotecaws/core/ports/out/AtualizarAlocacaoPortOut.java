@@ -2,8 +2,8 @@ package com.farsousa.bibliotecaws.core.ports.out;
 
 import com.farsousa.bibliotecaws.core.models.Alocacao;
 
-public interface SalvarAlocacaoPortOut {
+public interface AtualizarAlocacaoPortOut {
 	
-	Alocacao execute(Alocacao alocacaoASerSalva);
+	Alocacao execute(Alocacao alocacaoASerAtualizada);
 
 }

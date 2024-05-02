@@ -14,11 +14,11 @@ import com.farsousa.bibliotecaws.core.ports.in.SalvarAlocacaoPortIn;
 
 @RestController
 @RequestMapping("/alocacoes")
-public class AlocarController {
+public class SalvarAlocacaoController {
 	
 	private SalvarAlocacaoPortIn salvarAlocacaoPortIn;
 	
-	public AlocarController(SalvarAlocacaoPortIn salvarAlocacaoPortIn) {
+	public SalvarAlocacaoController(SalvarAlocacaoPortIn salvarAlocacaoPortIn) {
 		this.salvarAlocacaoPortIn = salvarAlocacaoPortIn;
 	}
 	

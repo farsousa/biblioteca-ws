@@ -1,11 +1,10 @@
-package com.farsousa.bibliotecaws.core.ports.out;
+package com.farsousa.bibliotecaws.core.ports.in;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.farsousa.bibliotecaws.core.models.Alocacao;
 
-public interface BuscarAlocacaoPortOut {
+public interface BuscarAlocacaoPortIn {
 	
 	int quantidadeAlocacoesPendentesParaUsuario(Long idUsuario);
 	
@@ -15,6 +14,6 @@ public interface BuscarAlocacaoPortOut {
 	
 	List<Alocacao> todos();
 	
-	Optional<Alocacao> porId(Long id);
+	Alocacao porId(Long id);
 
 }
