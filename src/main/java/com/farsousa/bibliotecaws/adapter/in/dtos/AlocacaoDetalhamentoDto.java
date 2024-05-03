@@ -1,4 +1,4 @@
-package com.farsousa.bibliotecaws.adapter.in.web.dtos;
+package com.farsousa.bibliotecaws.adapter.in.dtos;
 
 import java.time.LocalDateTime;
 

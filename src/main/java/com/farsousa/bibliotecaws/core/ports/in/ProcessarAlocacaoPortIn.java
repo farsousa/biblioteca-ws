@@ -1,11 +1,11 @@
 package com.farsousa.bibliotecaws.core.ports.in;
 
+import com.farsousa.bibliotecaws.core.models.Alocacao;
+
 public interface ProcessarAlocacaoPortIn {
 	
-	void verificarPendenciasTodos();
+	void registrarDevolucao(Alocacao alocacao);
 	
-	void verificarPendenciasPorId(Long id);
-	
-	void registrarDevolucaoPorId(Long id);
+	void calcularAtrasoMultaJuros(Alocacao alocacao);
 
 }

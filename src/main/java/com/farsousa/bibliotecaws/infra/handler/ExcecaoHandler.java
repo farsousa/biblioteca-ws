@@ -4,7 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.farsousa.bibliotecaws.adapter.in.web.dtos.RespostaDto;
+import com.farsousa.bibliotecaws.adapter.in.dtos.RespostaDto;
 import com.farsousa.bibliotecaws.core.exceptions.NaoEncontradoException;
 import com.farsousa.bibliotecaws.core.exceptions.ValidacaoException;
 

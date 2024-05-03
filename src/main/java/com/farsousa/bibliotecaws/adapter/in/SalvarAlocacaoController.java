@@ -1,4 +1,4 @@
-package com.farsousa.bibliotecaws.adapter.in.web;
+package com.farsousa.bibliotecaws.adapter.in;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.farsousa.bibliotecaws.adapter.in.web.dtos.AlocacaoDetalhamentoDto;
-import com.farsousa.bibliotecaws.adapter.in.web.dtos.RespostaDto;
-import com.farsousa.bibliotecaws.adapter.in.web.forms.AlocacaoCadastroForm;
+import com.farsousa.bibliotecaws.adapter.in.dtos.AlocacaoDetalhamentoDto;
+import com.farsousa.bibliotecaws.adapter.in.dtos.RespostaDto;
+import com.farsousa.bibliotecaws.adapter.in.forms.AlocacaoCadastroForm;
 import com.farsousa.bibliotecaws.core.models.Alocacao;
 import com.farsousa.bibliotecaws.core.ports.in.SalvarAlocacaoPortIn;
 

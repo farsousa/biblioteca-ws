@@ -1,4 +1,4 @@
-package com.farsousa.bibliotecaws.adapter.in.web.forms;
+package com.farsousa.bibliotecaws.adapter.in.forms;
 
 import com.farsousa.bibliotecaws.core.models.Usuario;
 
